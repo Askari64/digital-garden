@@ -80,6 +80,38 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+  name: "images",
+  title: "Images",
+  type: "array",
+  of: [
+    {
+      type: "image",
+      options: {
+        hotspot: true,
+        aiAssist: {
+          imageDescriptionField: "alt",
+        },
+      },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          description: "Important for SEO and accessibility.",
+          validation: (rule) => {
+            return rule.custom((alt, context) => {
+              if ((context.document?.images as any)?.length && !alt) {
+                return "Alternative text is required for each image.";
+              }
+              return true;
+            });
+          },
+        },
+      ],
+    },
+  ],
+}),
+    defineField({
       name: "date",
       title: "Date",
       type: "datetime",
