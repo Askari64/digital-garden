@@ -78,11 +78,6 @@ export default defineConfig({
     singletonPlugin([settings.name]),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
-    // Sets up AI Assist with preset prompts
-    // https://www.sanity.io/docs/ai-assist
-   
-    // Vision lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
- 
+
   ].filter(Boolean) as PluginOptions[],
 });
