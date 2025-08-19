@@ -7,6 +7,7 @@ import { Suspense } from "react";
 
 import Avatar from "../../avatar";
 import CoverImage from "../../cover-image";
+import BlogImages from "../../blog-images";
 import DateComponent from "../../date";
 import MoreStories from "../../more-stories";
 import PortableText from "../../portable-text";
@@ -80,9 +81,12 @@ export default async function PostPage({ params }: Props) {
             <Avatar name={post.author.name} picture={post.author.picture} />
           )}
         </div>
+
+        {/* Cover Image */}
         <div className="mb-8 sm:mx-0 md:mb-16">
           <CoverImage image={post.coverImage} priority />
         </div>
+
         <div className="mx-auto max-w-2xl">
           <div className="mb-6 block md:hidden">
             {post.author && (
@@ -100,6 +104,11 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto max-w-2xl"
             value={post.content as PortableTextBlock[]}
           />
+        )}
+
+         {/* Render multiple images */}
+        {post.images && post.images.length > 0 && (
+          <BlogImages images={post.images} />
         )}
       </article>
       <aside>
