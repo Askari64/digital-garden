@@ -78,9 +78,6 @@ export default async function RootLayout({
                   className="prose-sm text-pretty bottom-0 w-full max-w-none bg-white py-12 text-center md:py-20"
                   value={footer as PortableTextBlock[]}
                 />
-                <p className="prose-sm text-pretty bottom-0 w-full max-w-none bg-white pb-12 text-center md:pb-20">
-                  Made with 💖 by <a href="https://github.com/Askari64" rel="noopener noreferrer" target="_blank" className=" hover:underline">Askari</a>
-                </p>
                 </>
                 
               ) : (
