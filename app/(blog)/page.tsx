@@ -20,7 +20,7 @@ function Intro(props: { title: string | null | undefined; description: any }) {
     : demo.description;
   return (
     <section className="mt-16 mb-16 flex flex-col items-center lg:mb-12 lg:flex-row lg:justify-between">
-      <h1 className="text-balance text-6xl font-bold leading-tight tracking-tighter lg:pr-8 lg:text-8xl">
+      <h1 className="text-balance text-4xl font-bold leading-tight tracking-tighter text-center lg:pr-8 lg:text-6xl">
         {title || demo.title}
       </h1>
       <h2 className="text-pretty mt-5 text-center text-lg lg:pl-8 lg:text-left">
@@ -98,7 +98,7 @@ export default async function Page() {
       )}
       {heroPost?._id && (
         <aside>
-          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
+          <h2 className="mb-8 text-4xl font-bold leading-tight tracking-tighter md:text-5xl">
             More Stories
           </h2>
           <Suspense>
